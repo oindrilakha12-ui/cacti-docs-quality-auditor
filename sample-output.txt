@@ -1,0 +1,95 @@
+Cacti Docs Quality Auditor — Sample Output
+==========================================
+Run date   : 2026-05-01
+Repository : hyperledger-cacti/cacti (main branch)
+Scope      : Partial Scan — /docs directory and root-level markdown files
+
+══════════════════════════════════════════════════
+  Hyperledger Cacti — Documentation Audit Report
+══════════════════════════════════════════════════
+  Partial Scan: /docs directory and root-level markdown files
+
+File: README.md
+  [High] [Branding] Line 12 — Outdated reference: "Hyperledger Cactus"
+     Context: the goal of Hyperledger Cactus is to provide a framework for cross-ledger transactions.
+  [Medium] [Section] — Missing required section: "Architecture"
+
+File: README-cactus.md
+  [High] [Branding] Line 5 — Outdated reference: "Hyperledger Cactus"
+     Context: # Hyperledger Cactus
+  [Medium] [Section] — Missing required section: "Architecture"
+  [Low] [Section] — Missing required section: "Contributing"
+
+File: CHANGELOG.md
+  [High] [Link] Line 102 — Broken local link: "CONTRIBUTING.md"
+     Context: For contributor guidelines, see [CONTRIBUTING.md](CONTRIBUTING.md).
+
+File: docs/docs/index.md
+  [High] [Branding] Line 15 — Outdated reference: "Cactus"
+     Context: Welcome to the Cactus documentation portal. This site covers...
+  [High] [Branding] Line 38 — Outdated reference: "Hyperledger Cactus"
+     Context: Hyperledger Cactus is a permissive open source blockchain integration framework.
+
+File: docs/docs/vision.md
+  [High] [Branding] Line 8 — Outdated reference: "Cactus"
+     Context: The mission of Cactus is to make blockchain interoperability seamless.
+  [High] [Branding] Line 22 — Outdated reference: "Hyperledger Cactus"
+     Context: making Hyperledger Cactus the most pluggable enterprise blockchain framework.
+
+File: docs/docs/architecture.md
+  [High] [Branding] Line 4 — Outdated reference: "Cactus"
+     Context: This page describes the Cactus plugin system architecture.
+
+File: docs/docs/guides/getting-started.md
+  [High] [Branding] Line 31 — Outdated reference: "Cactus"
+     Context: Before running a Cactus API server, ensure the following are installed.
+  [High] [Link] Line 87 — Broken local link: "../guides/advanced-setup.md"
+     Context: See the [advanced setup guide](../guides/advanced-setup.md) for custom configurations.
+
+File: docs/docs/guides/developers.md
+  [Medium] [Section] — Missing required section: "Getting Started"
+  [Low] [Section] — Missing required section: "Contributing"
+
+File: docs/docs/contributing/index.md
+  [High] [Branding] Line 11 — Outdated reference: "Cactus"
+     Context: Thank you for contributing to Cactus! We value all contributions.
+
+File: docs/docs/weaver/getting-started/interop/asset-exchange/overview.md
+  [High] [Link] Line 42 — Broken local link: "external/getting-started/test-network/overview.md"
+     Context: the network you [launched earlier](external/getting-started/test-network/overview.md).
+
+File: docs/docs/weaver/getting-started/interop/data-sharing/overview.md
+  [High] [Link] Line 19 — Broken local link: "../test-network/fabric-setup.md"
+     Context: Follow the [Fabric setup guide](../test-network/fabric-setup.md) first.
+
+File: docs/docs/cactus/ledger-browser/plugin-apps/app-patterns.md
+  [High] [Branding] Line 3 — Outdated reference: "cactus"
+     Context: such as [cactus-plugin-persistence-ethereum](packages/cactus-plugin-persistence-ethereum)
+
+File: docs/docs/concepts/index.md
+  [High] [Branding] Line 9 — Outdated reference: "Cactus"
+     Context: Cactus exposes a pluggable API surface that enables connection to any ledger.
+  [Medium] [Section] — Missing required section: "Architecture"
+
+-- (output truncated for brevity — 69 of 126 files contained issues) --
+
+══════════════════════════════════════════════════
+  Summary
+══════════════════════════════════════════════════
+  Total files scanned : 126
+  Files with issues   : 69
+  Total issues found  : 1638
+
+  Breakdown by type:
+    Branding : 984
+    Link     : 312
+    Section  : 342
+
+  Breakdown by severity:
+    High     : 1296
+    Medium   : 228
+    Low      : 114
+
+══════════════════════════════════════════════════
+
+Exit code: 1  (High-severity issues detected — CI build would fail)
