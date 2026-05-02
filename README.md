@@ -58,12 +58,12 @@ CACTI_REPO_PATH=/path/to/cacti npm run audit
 
 ## Why This Tool Matters
 
-Documentation debt is one of the most underestimated problems in large open-source projects. In a monorepo with hundreds of packages and an ongoing project rename (Cactus → Cacti), documentation can silently degrade across releases — confusing new contributors, misleading users, and reflecting poorly on project maintainability.
+Documentation debt is one of the most underestimated problems in large open-source projects. In a monorepo with hundreds of packages and an ongoing project rename (Cactus → Cacti), documentation can silently degrade across releases :-onfusing new contributors, misleading users, and reflecting poorly on project maintainability.
 
 This tool addresses three concrete, recurring problems:
 
 **1. Legacy branding creates contributor confusion.**
-References to "Hyperledger Cactus" still appear in active documentation, long after the project was renamed. These are not historical notes — they appear in onboarding guides and architecture pages that new contributors read first.
+References to "Hyperledger Cactus" still appear in active documentation, long after the project was renamed. These are not historical notes :- they appear in onboarding guides and architecture pages that new contributors read first.
 
 **2. Broken internal links erode trust in documentation.**
 As the repository restructures packages, relative links go stale silently. No build system catches them; no CI check prevents them from being merged.
@@ -142,19 +142,19 @@ See [sample-output.txt](./sample-output.txt) for the full annotated output.
 
 ## How It Works
 
-**Stage 1 — Discovery (`scanner.ts`)**
+**Stage 1 :- Discovery (`scanner.ts`)**
 Collects `.md` files matching `*.md` and `docs/**/*.md` using `glob`. Auto-generated directories (`generated/`, `openapi/`, proto stubs) are excluded to prevent false positives.
 
-**Stage 2 — Branding Analysis (`auditors.ts`)**
+**Stage 2 :- Branding Analysis (`auditors.ts`)**
 Each file's lines are matched against `/Hyperledger Cactus|\bCactus\b/gi`. Package namespace strings (`@hyperledger/cactus-*`) are suppressed. Results include line number and surrounding context.
 
-**Stage 3 — Link Validation (`auditors.ts`)**
+**Stage 3 :- Link Validation (`auditors.ts`)**
 Local links matching `\[label\]\(target\)` are extracted. Each target is resolved relative to the source file using `path.resolve` and verified with `fs.pathExists`. Anchor fragments are stripped before resolution.
 
-**Stage 4 — Section Check (`auditors.ts`)**
+**Stage 4 :- Section Check (`auditors.ts`)**
 Primary documentation files are checked for required headers using case-insensitive regex. Only root-level READMEs and files under `docs/docs/` are subject to this check to avoid noise from fixture or generated files.
 
-**Stage 5 — Report (`reporter.ts`)**
+**Stage 5 :- Report (`reporter.ts`)**
 Results are printed per file with color-coded severity levels. A structured summary provides totals broken down by type and severity. Exit code `1` is returned if any High-severity issues are found.
 
 ---
@@ -273,7 +273,7 @@ Results should be reviewed by a human maintainer before remediation actions are 
 Contributions are welcome. Before opening a pull request:
 
 1. Open an issue to discuss the proposed change.
-2. Follow the existing module structure — one concern per file (`scanner`, `auditors`, `reporter`).
+2. Follow the existing module structure :- one concern per file (`scanner`, `auditors`, `reporter`).
 3. Document any new audit rule with a comment block explaining its purpose, the pattern it matches, and its severity rationale.
 4. Test against a local Cacti repository clone before submitting.
 
