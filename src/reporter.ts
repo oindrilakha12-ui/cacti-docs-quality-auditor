@@ -1,5 +1,8 @@
+// reporter.ts
+// Formats audit results into a chalk-coloured per-file and summary report.
+// Exits with code 1 when High severity issues are found for CI integration.
+
 import chalk from 'chalk';
-import path from 'path';
 import { FileAuditResult, AuditIssue, Severity } from './auditors';
 
 // ---------------------------------------------------------------------------
