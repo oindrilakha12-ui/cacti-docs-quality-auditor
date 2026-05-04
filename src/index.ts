@@ -1,3 +1,7 @@
+// index.ts
+// Entry point. Orchestrates scanner -> auditors -> reporter pipeline.
+// Accepts CACTI_REPO_PATH environment variable to override default repo path.
+
 import path from 'path';
 import { findMarkdownFiles, getScanScopeLabel } from './scanner';
 import { auditFile } from './auditors';
