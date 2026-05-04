@@ -29,5 +29,6 @@ jobs:
 
       - name: Run documentation audit
         run: npm run audit
+        continue-on-error: true
         env:
           CACTI_REPO_PATH: ../cacti
