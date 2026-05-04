@@ -1,4 +1,6 @@
-import { glob } from 'glob';
+// scanner.ts
+// Discovers markdown files across the Cacti repository using glob patterns.
+// Excludes auto-generated directories (generated/, openapi/) to prevent false positives.simport { glob } from 'glob';
 import path from 'path';
 
 /**
