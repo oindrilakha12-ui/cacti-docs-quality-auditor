@@ -1,5 +1,7 @@
+// auditors.ts
+// Three focused audit checks: legacy branding detection, broken internal link
+// resolution, and missing section detection across Cacti markdown files.
 import fs from 'fs-extra';
-import path from 'path';
 
 // ---------------------------------------------------------------------------
 // Types
