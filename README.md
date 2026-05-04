@@ -279,6 +279,30 @@ Contributions are welcome. Before opening a pull request:
 
 ---
 
+## Audit Summary
+
+Run against `hyperledger-cacti/cacti` mainline, May 2026.
+
+Hyperledger Cacti — Documentation Audit Report
+
+Partial Scan: /docs directory and root-level markdown files
+Total files scanned : 126
+Files with issues   : 69
+Total issues found  : 1638
+Breakdown by type:
+Branding : 984
+Link     : 312
+Section  : 342
+Breakdown by severity:
+High     : 1296
+Medium   : 228
+Low      : 114
+
+These findings form the Week 0 baseline for the mentorship cleanup work.
+Metric M9 targets 0 broken links by Week 22.
+Metric M5 targets 8 of 10 documented problems resolved in main.
+Full annotated output available in [sample-output.txt](./sample-output.txt).
+
 ## License
 
 Apache License 2.0.
