@@ -1,0 +1,33 @@
+name: Cacti Docs Audit
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout auditor
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Clone Hyperledger Cacti
+        run: |
+          git clone --depth=1 https://github.com/hyperledger-cacti/cacti.git ../cacti
+
+      - name: Run documentation audit
+        run: npm run audit
+        env:
+          CACTI_REPO_PATH: ../cacti
