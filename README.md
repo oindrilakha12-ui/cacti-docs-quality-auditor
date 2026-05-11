@@ -87,41 +87,13 @@ Packages lacking "Getting Started" or "Architecture" sections force contributors
 
 ## Example Audit Output
 
-```text
-══════════════════════════════════════════════════
-  Hyperledger Cacti — Documentation Audit Report
-══════════════════════════════════════════════════
-  Partial Scan: /docs directory and root-level markdown files
+**Findings — sample from BUILD.md and Weaver docs:**
 
-File: docs/docs/index.md
-  [High] [Branding] Line 15 — Outdated reference: "Cactus"
-     Context: Welcome to the Cactus documentation portal.
+![Audit findings](https://github.com/user-attachments/assets/6c7ac268-c753-47e9-9564-84d8dcdb5923)
 
-File: docs/docs/weaver/getting-started/interop/asset-exchange/overview.md
-  [High] [Link] Line 42 — Broken local link: "external/getting-started/test-network/overview.md"
-     Context: the network you [launched earlier](external/getting-started/test-network/overview.md).
+**Summary — run against hyperledger-cacti/cacti mainline, May 2026:**
 
-File: README-cactus.md
-  [Medium] [Section] — Missing required section: "Architecture"
-
-══════════════════════════════════════════════════
-  Summary
-══════════════════════════════════════════════════
-  Total files scanned : 126
-  Files with issues   : 69
-  Total issues found  : 1638
-
-  Breakdown by type:
-    Branding : 984
-    Link     : 312
-    Section  : 342
-
-  Breakdown by severity:
-    High     : 1296
-    Medium   : 228
-    Low      : 114
-══════════════════════════════════════════════════
-```
+![Audit summary](https://github.com/user-attachments/assets/b5872f30-0540-47ca-bd1b-cbd122c7657c)
 
 See [sample-output.txt](./sample-output.txt) for the full annotated output.
 
